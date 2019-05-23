@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Midterm</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <h1>GreatReads</h1>
+
+    <!--vue object-->
+    <div id="app">
+        <form v-on:submit.prevent="searchBook">
+            <h2>Search for a book</h2>
+            <input type="text" v-model="query">
+            <input type="submit" value="Search" id="search">
+        </form>
+
+        <div style="display: flex">
+            <div class="search">
+                <h3>Search Results</h3>
+                <div v-if="loading">
+                    <p>Loading...</p>
+                </div>
+                <div v-else>
+                    <ul>
+                        <li v-for="item in books">
+                            <h2>{{item.title}}</h2>
+                            <p>{{item.author_name}}</p>
+                            <p>{{item.first_publish_year}}</p>
+                            <img src="" alt="thumb"><br>
+                            <button type="button" v-on:click="addToFavs(item)">+</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="favorites">
+                <h3>Favorites</h3>
+                <ul>
+                    <li v-for="item in favorites">
+                        <h2>{{item.title}}</h2>
+                        <p>{{item.author_name}}</p>
+                        <p>{{item.first_publish_year}}</p>
+                        <img src="" alt="thumb"><br>
+                        <button type="button" v-on:click="remFromFavs(item)">-</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--scripts here to load page faster-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script text="type/javascript" src="./script.js"></script>
+</body>
+
+</html>

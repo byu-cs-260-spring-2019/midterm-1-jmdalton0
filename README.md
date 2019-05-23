@@ -1,7 +1,5 @@
 # CS 260  Midterm 1
 
-For this midterm you will have 3 hours (in class - Thursday 12pm-3pm - anything submitted after this time will not go towards your points earned) to complete the following prompt.  You will be allowed to use the internet to complete this project - you may not copy any code online that is not your own - you can google things to understand how certain pieces of Vue/Javascript/CSS/etc work.
-
 You will be creating a simplified Goodreads application using Vue.  If you have never used Goodreads before it is a place for users to record and review books they have read and would like to read.  You will be using the OpenLibrary API - which provides lots of information about different books and allows you to search keywords by different fields.  
 
 You will be required to:
