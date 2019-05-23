@@ -66,7 +66,7 @@ let app = new Vue({
                             'https://openlibrary.org/api/books?bibkeys=ISBN:'
                             + this.books[i].isbn
                             + '&jscmd=details&format=json');
-                            console.log(thumbResponse);
+                        console.log(thumbResponse);
                         this.books
                     } catch (error) {
                         console.log(error);
@@ -79,7 +79,8 @@ let app = new Vue({
         },
 
         addToFavs(item) {
-            this.favorites.push(item);
+            if (this.favorites.indexOf(item) === -1)
+                this.favorites.push(item);
         },
 
         remFromFavs(item) {
